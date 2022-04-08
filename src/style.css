@@ -132,7 +132,7 @@ body {
     opacity: 0;
     background: rgb(255, 41, 128, 0.6);
     border-bottom: 2px solid white;
-    /* background: rgb(0, 0, 0, 0.); */
+
     padding: 3px 10px;
     margin-bottom: 2px;
     border-radius: 10px;
@@ -207,12 +207,13 @@ body {
 #contact {
     position: absolute;
     /* top: 550px; */
-    bottom: 30px;
+    bottom: 60px;
     left: 30px;
     height: 50px;
     width: 500px;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.596);
     display: flex;
+    color: rgb(255, 255, 255);
     justify-content: space-between;
     align-items: center;
     border: 1px solid black;
@@ -223,9 +224,10 @@ body {
 
 #inputBox {
     font-size: 1.5rem;
-    height: 40px;
+    height: 70px;
     width: 300px;
-    background-color: #fff;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
 }
 
 /* #msgIcon {
@@ -294,20 +296,83 @@ button:disabled {
     position: absolute;
     display: flex;
     flex-direction: column;
-    bottom: 40px;
+    top: 200px;
     right: 60px;
-    height: 400px;
+    height: 350px;
     width: 220px;
 }
 
 #iconLink img {
     margin: 6px;
     height: 60px;
-    width: 200px;
+    /* width: 200px; */
+    width: auto;
 }
 
 #iconText {
     font-size: 1.5rem;
+    /* font-family: "Poppins", sans-serif;
+     */
+    font-family: "Source Sans Pro", sans-serif;
     background-color: #eee;
     background: transparent;
+    color: #aa3366;
+    padding: 10px;
+}
+
+@media screen and (max-width: 992px) {
+    #inputBox {
+        height: 70px;
+        width: 100px;
+    }
+
+    #sendBtn {
+        font-size: 1.5rem;
+        height: 38px;
+        width: 50px;
+        /* margin-left: 10px; */
+        color: #fff;
+        background-color: #ff2980;
+        border-radius: 10px;
+        margin-right: 5px;
+    }
+
+    #contact {
+        position: absolute;
+        /* top: 550px; */
+        bottom: 60px;
+        left: 30px;
+        height: 40px;
+        width: auto;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #inputBox {
+        height: 70px;
+        width: 300px;
+    }
+
+    #iconLink {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 115px;
+        right: 30px;
+        height: 200px;
+        width: 150px;
+    }
+
+    #iconLink img {
+        margin: 6px;
+        height: 60px;
+        width: auto;
+    }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+    body {
+        background-color: olive;
+    }
 }

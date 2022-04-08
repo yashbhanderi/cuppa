@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import CuppaVideo from "./video/cuppa.mp4";
-import Logo from "./1 TRANSPARENT.png";
-import LogoBlack from "./Logo.png";
+// import CuppaVideo from "./video/cuppa.mp4";
+import Logo from "./images/1 TRANSPARENT.png";
+import LogoBlack from "./images/Logo.png";
 import GooglePlay from "./images/google_play.png";
 import AppStore from "./images/app_store.png";
-import QRCode from "./images/qrcode.png";
+import QRCode from "./images/qrchimpX512.png";
 import "./style.css";
 // import 'font-awesome/css/font-awesome.min.css'
 
@@ -18,8 +18,7 @@ import startFirebase from "./firebase";
 import { ref, set } from "firebase/database";
 
 const App = () => {
-    const slogan = ["Dublin Start-up ", "Dublin love ", "I love "];
-
+    const slogan = ["Dublin is", "Engage Customers Like Never Before with", "Boost revenue with Cuppa"];
     const [feedback, setFeedback] = useState("");
     const [email, setEmail] = useState("");
     const [toggle, setToggle] = useState(false);
@@ -98,8 +97,8 @@ const App = () => {
 
     return (
         <div id="home">
-            <video onTimeUpdate={(e) => playbackHandler(e)} id="video" autoPlay loop muted>
-                <source src={CuppaVideo} type="video/mp4" />
+            <video onTimeUpdate={(e) => playbackHandler(e)} id="video" autoPlay loop muted controls>
+                <source src="https://firebasestorage.googleapis.com/v0/b/coffee-loyalty-8f106.appspot.com/o/VID-20220407-WA0001.mp4?alt=media&token=128fe0a7-8b9a-4052-8dd7-9ee27217416c" type="video/mp4" />
             </video>
             {/* <iframe
                 id="video"
@@ -113,12 +112,12 @@ const App = () => {
 
             <div id="logo">
                 <div id="logoDiv">
-                    <div className="verticalflip">
-                        {/* I Am &nbsp; */}
+                    <div className="verticalflip"> 
                         {slogan.map((item) => {
                             return <span>{item}</span>;
                         })}
-                    </div>
+                     </div>
+
                     {logoblack ? (
                         <img id="logoImg" src={LogoBlack} alt="logo" />
                     ) : (
@@ -204,12 +203,13 @@ const App = () => {
                 )}
             </div>
             <div id="iconLink">
-                <h1 id="iconText" style={{ padding: "5px" }}>
-                    Cuppa is a startup originated from Dublin. 
-                </h1>
+                <h3 id="iconText">
+                Cuppa's coffee loyalty program is free for everyone
+                5-minute setup, No setup cost, No setup fees 
+                </h3>
                 <img style={{ height: "200px" }} src={QRCode} alt="" />
-                <img src={GooglePlay} alt="" />
-                <img src={AppStore} alt="" />
+                <img src={GooglePlay} alt="" id="btn"/>
+                <img src={AppStore} alt="" id="btn" />
             </div>
         </div>
     );
