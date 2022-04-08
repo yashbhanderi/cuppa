@@ -209,17 +209,17 @@ body {
     /* top: 550px; */
     bottom: 60px;
     left: 30px;
-    height: 50px;
+    height: 80px;
     width: 500px;
     background-color: rgba(0, 0, 0, 0.596);
     display: flex;
     color: rgb(255, 255, 255);
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     /* padding-left: 40px; */
     border-radius: 10px;
-    border-color: rgb(255, 41, 128, 0.6);
+    /* border-color: rgb(255, 41, 128, 0.6); */
 }
 
 #inputBox {
@@ -228,6 +228,10 @@ body {
     width: 300px;
     background-color: transparent;
     color: rgb(255, 255, 255);
+}
+
+.contactInput::placeholder {
+    color: #ff2980;
 }
 
 /* #msgIcon {
@@ -272,14 +276,15 @@ body {
 }
 
 #sendBtn {
-    font-size: 1.5rem;
-    height: 38px;
-    width: 80px;
+    font-size: 2.5rem;
+    height: 58px;
+    width: 120px;
     /* margin-left: 10px; */
     color: #fff;
-    background-color: #ff2980;
+    background: rgb(255, 57, 91);
+    background: linear-gradient(281deg, rgba(255, 57, 91, 1) 0%, rgba(255, 0, 127, 1) 53%);
     border-radius: 10px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 #sendBtn:hover {
@@ -307,6 +312,12 @@ button:disabled {
     height: 60px;
     /* width: 200px; */
     width: auto;
+}
+
+#thankyouText {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-left: 10px;
 }
 
 #iconText {

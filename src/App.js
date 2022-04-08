@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-// import CuppaVideo from "./video/cuppa.mp4";
 import Logo from "./images/1 TRANSPARENT.png";
 import LogoBlack from "./images/Logo.png";
 import GooglePlay from "./images/google_play.png";
 import AppStore from "./images/app_store.png";
 import QRCode from "./images/qrchimpX512.png";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import "./style.css";
-// import 'font-awesome/css/font-awesome.min.css'
 
 import startFirebase from "./firebase";
 
@@ -18,7 +18,11 @@ import startFirebase from "./firebase";
 import { ref, set } from "firebase/database";
 
 const App = () => {
-    const slogan = ["Dublin is", "Engage Customers Like Never Before with", "Boost revenue with Cuppa"];
+    const slogan = [
+        "Dublin is",
+        "Engage Customers Like Never Before with",
+        "Boost revenue with Cuppa",
+    ];
     const [feedback, setFeedback] = useState("");
     const [email, setEmail] = useState("");
     const [toggle, setToggle] = useState(false);
@@ -29,46 +33,25 @@ const App = () => {
 
     const feedbackBtnHandler = () => {
         if (feedback !== "") {
-            console.log("okay");
-            setToggle(true);
+            const datetime = Date().toLocaleString();
+
+            set(ref(db, "feedback/" + datetime), {
+                number: "+" + feedback,
+                created: new Date().toLocaleString(),
+            })
+                .then(() => {
+                    console.log("data added successfully.");
+                    setFeedback("");
+                    setDisable(true);
+                    setToggle(true);
+                })
+                .catch((err) => {
+                    console.log("[Error] ", err);
+                });
         }
     };
 
-    const emailBtnHandler = async () => {
-        // firestore
-        // try {
-        //     const docRef = await addDoc(collection(db, "feedback"), {
-        //         message: feedback,
-        //         email: email,
-        //         created: Timestamp.now(),
-        //     });
-        //     // onClose()
-        //     console.log("Document written with ID: ", docRef.id);
-        // } catch (err) {
-        //     console.log(err);
-        // }
-
-        // real-time
-
-        const datetime = Date().toLocaleString();
-
-        set(ref(db, "feedback/" + datetime), {
-            message: feedback,
-            email: email,
-            created: new Date().toLocaleString(),
-        })
-            .then(() => {
-                console.log("data added successfully.");
-                setToggle(false);
-                setFeedback("");
-                setEmail("");
-                setShowNotification(true);
-                setDisable(true);
-            })
-            .catch((err) => {
-                console.log("[Error] ", err);
-            });
-    };
+    console.log(feedback);
 
     const closeMessage = (e) => {
         const elem = document.getElementById("notification");
@@ -98,7 +81,10 @@ const App = () => {
     return (
         <div id="home">
             <video onTimeUpdate={(e) => playbackHandler(e)} id="video" autoPlay loop muted controls>
-                <source src="https://firebasestorage.googleapis.com/v0/b/coffee-loyalty-8f106.appspot.com/o/VID-20220407-WA0001.mp4?alt=media&token=128fe0a7-8b9a-4052-8dd7-9ee27217416c" type="video/mp4" />
+                <source
+                    src="https://firebasestorage.googleapis.com/v0/b/coffee-loyalty-8f106.appspot.com/o/VID-20220407-WA0001.mp4?alt=media&token=128fe0a7-8b9a-4052-8dd7-9ee27217416c"
+                    type="video/mp4"
+                />
             </video>
             {/* <iframe
                 id="video"
@@ -112,11 +98,11 @@ const App = () => {
 
             <div id="logo">
                 <div id="logoDiv">
-                    <div className="verticalflip"> 
+                    <div className="verticalflip">
                         {slogan.map((item) => {
                             return <span>{item}</span>;
                         })}
-                     </div>
+                    </div>
 
                     {logoblack ? (
                         <img id="logoImg" src={LogoBlack} alt="logo" />
@@ -132,8 +118,7 @@ const App = () => {
                         showNotification
                             ? { marginLeft: "0%", transition: "all 1s" }
                             : { marginLeft: "-100%", transition: "all 1s" }
-                    }
-                >
+                    }>
                     <span>Message has been sent</span>
                     <span onClick={closeMessage}>
                         <i
@@ -153,26 +138,7 @@ const App = () => {
                 </div>
                 {toggle ? (
                     <>
-                        <div
-                            style={{
-                                marginLeft: "10px",
-                                display: "flex",
-                                alignItems: "center",
-                                textAlign: "center",
-                            }}>
-                            <i id="msgIcon" className="fa-regular fa-envelope"></i>
-                            <input
-                                id="inputBox"
-                                disabled={disable ? true : false}
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                type="text"
-                                placeholder="Email"
-                            />
-                        </div>
-                        <button id="sendBtn" onClick={emailBtnHandler}>
-                            Send
-                        </button>
+                        <div id="thankyouText">Thank you, we'll contact you soon !</div>
                     </>
                 ) : (
                     <>
@@ -183,14 +149,42 @@ const App = () => {
                                 alignItems: "center",
                                 textAlign: "center",
                             }}>
-                            <i id="msgIcon" className="fa-regular fa-message"></i>
-                            <input
-                                id="inputBox"
-                                disabled={disable ? true : false}
+                            {/* <i id="msgIcon" className="fa-regular fa-message"></i> */}
+                            <PhoneInput
+                                enableAreaCodeStretch={true}
+                                inputStyle={{
+                                    color: "white",
+                                    textAlign: "left",
+                                    height: "60px",
+                                    fontSize: "2.5rem",
+                                    width: "300px",
+                                    background: "none",
+                                    border: "none",
+                                }}
+                                // dropdown menu
+                                dropdownStyle={{
+                                    color: "black",
+                                    textAlign: "left",
+                                    bottom: "70px",
+                                }}
+                                // dropdown button
+                                buttonStyle={{
+                                    fontSize: "2.5rem",
+                                    width: "40px",
+                                    height: "50px",
+                                    top: "5px",
+                                    // borderRadius: "5px",
+                                    textAlign: "center",
+                                    border: "none",
+                                    background: "#fff",
+                                    marginRight: "5px",
+                                }}
+                                // disabled={ disable ? "true" : "false" }
+                                country={"ie"}
+                                // className="contactInput"
+                                placeholder="Mobile Number"
                                 value={feedback}
-                                onChange={(e) => setFeedback(e.target.value)}
-                                type="text"
-                                placeholder="Drop Message"
+                                onChange={setFeedback}
                             />
                         </div>
                         <button
@@ -204,11 +198,11 @@ const App = () => {
             </div>
             <div id="iconLink">
                 <h3 id="iconText">
-                Cuppa's coffee loyalty program is free for everyone
-                5-minute setup, No setup cost, No setup fees 
+                    Cuppa's coffee loyalty program is free for everyone 5-minute setup, No setup
+                    cost, No setup fees
                 </h3>
                 <img style={{ height: "200px" }} src={QRCode} alt="" />
-                <img src={GooglePlay} alt="" id="btn"/>
+                <img src={GooglePlay} alt="" id="btn" />
                 <img src={AppStore} alt="" id="btn" />
             </div>
         </div>
