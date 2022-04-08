@@ -12,7 +12,8 @@
 
 * {
     /* font-family: "Poppins", sans-serif; */
-    font-family: "Source Sans Pro", sans-serif;
+    /* font-family: "Source Sans Pro", sans-serif; */
+    font-family: "Lato", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -24,6 +25,7 @@
 
 html {
     font-size: 62.5%;
+    overflow: hidden;
 }
 
 body {
@@ -42,10 +44,10 @@ body {
 }
 
 #video {
-    max-height: 100%;
     width: 100%;
+    height: 100%;
     object-fit: cover;
-    z-index: -100;
+    /* z-index: -100; */
     position: relative;
 }
 
@@ -59,12 +61,93 @@ body {
     justify-content: center;
 }
 
+#logoDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    padding-right: 50px;
+}
+
 #logoImg {
     height: 100px;
-    width: 100px;
+    width: 120px;
     /* color: #270949; */
     background: transparent;
-    background-color: #270949;
+    /* filter: drop-shadow(1px 1px 5px rgb(160, 160, 160)); */
+    /* background-color: #270949; */
+}
+
+@keyframes vertical {
+    0% {
+        opacity: 0;
+    }
+    8% {
+        opacity: 0;
+        -webkit-transform: rotateX(90deg);
+        transform: rotateX(90deg);
+    }
+    18% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    38% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+    }
+    45% {
+        opacity: 0;
+        /* -webkit-transform: translateY(0px); */
+        /* transform: translateY(0px); */
+        transform: rotateX(-90deg);
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#logo .verticalflip {
+    /* position: absolute;
+    top: 55px;
+    left: 490px; */
+    width: 100%;
+    font-size: 300%;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#logo .verticalflip span {
+    animation: vertical 7.5s linear infinite 0s;
+    -ms-animation: vertical 7.5s linear infinite 0s;
+    -webkit-animation: vertical 7.5s linear infinite 0s;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    opacity: 0;
+    background: rgb(255, 41, 128, 0.6);
+    border-bottom: 2px solid white;
+    /* background: rgb(0, 0, 0, 0.); */
+    padding: 3px 10px;
+    margin-bottom: 2px;
+    border-radius: 10px;
+}
+
+#logo .verticalflip span:nth-child(2) {
+    -ms-animation-delay: 2.5s;
+    -webkit-animation-delay: 2.5s;
+    animation-delay: 2.5s;
+}
+
+#logo .verticalflip span:nth-child(3) {
+    -ms-animation-delay: 5s;
+    -webkit-animation-delay: 5s;
+    animation-delay: 5s;
 }
 
 #slogan {
@@ -123,27 +206,108 @@ body {
 
 #contact {
     position: absolute;
-    top: 500px;
-    left: 50px;
+    /* top: 550px; */
+    bottom: 30px;
+    left: 30px;
+    height: 50px;
+    width: 500px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    /* padding-left: 40px; */
+    border-radius: 10px;
+    border-color: rgb(255, 41, 128, 0.6);
 }
 
 #inputBox {
-    font-size: 2rem;
-    height: 50px;
+    font-size: 1.5rem;
+    height: 40px;
     width: 300px;
+    background-color: #fff;
+}
+
+/* #msgIcon {
+    position: absolute;
+    bottom: 13px;
+    left: 13px;
+} */
+
+#notification {
+    position: absolute;
+    bottom: 60px;
+    left: 2px;
+    font-size: 1.5rem;
+    padding: 8px;
+    width: 200px;
+    border-radius: 8px;
     border: 1px solid black;
-    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    color: green;
+}
+
+#msgIcon {
+    font-size: 1.6rem;
+    /* color: #ff2980; */
+    margin-top: 2px;
+    margin-right: 15px;
+    margin-left: 8px;
+}
+
+.left {
+    left: 100%;
+    margin-left: 100%;
+    transition: all 1s;
+}
+
+.right {
+    right: 100%;
+    margin-left: -100%;
+    transition: all 1s;
 }
 
 #sendBtn {
-    font-size: 2rem;
-    height: 50px;
+    font-size: 1.5rem;
+    height: 38px;
     width: 80px;
-    margin-left: 10px;
-    border: 1px solid black;
+    /* margin-left: 10px; */
+    color: #fff;
+    background-color: #ff2980;
+    border-radius: 10px;
+    margin-right: 5px;
 }
 
 #sendBtn:hover {
     cursor: pointer;
+    background-color: #ec6a9c;
 }
 
+input:disabled,
+button:disabled {
+    cursor: not-allowed;
+}
+
+#iconLink {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 40px;
+    right: 60px;
+    height: 400px;
+    width: 220px;
+}
+
+#iconLink img {
+    margin: 6px;
+    height: 60px;
+    width: 200px;
+}
+
+#iconText {
+    font-size: 1.5rem;
+    background-color: #eee;
+    background: transparent;
+}
