@@ -69,6 +69,14 @@ const App = () => {
         }
     };
 
+    const onGooglePlayClickHandler = () => {
+        window.location.href = "csinfoplus.blogspot.com";
+    };
+
+    const onAppStorePlayClickHandler = () => {
+        window.location.href = "csinfoplus.blogspot.com";
+    };
+
     useEffect(() => {
         showNotification &&
             setTimeout(() => {
@@ -178,8 +186,8 @@ const App = () => {
             <div className="iconLink">
                 <button id="scanMeButton">Scan Me</button>
                 <img src={QRCode} alt="" className="qrCode" />
-                <img src={GooglePlay} alt="" className="btn" />
-                <img src={AppStore} alt="" className="btn" />
+                <img src={GooglePlay} alt="" className="btn" onClick={onGooglePlayClickHandler} />
+                <img src={AppStore} alt="" className="btn" onClick={onAppStorePlayClickHandler}/>
             </div>
             <div id="footer">
                 <h3 className="iconText">
