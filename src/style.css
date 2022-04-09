@@ -403,6 +403,10 @@ button:disabled {
         font-size: 150%;
     }
 
+    #footer {
+        width: 600px;
+    }
+
     .logo .verticalflip span {
         padding: 5px 7px;
         border-radius: 8px;
@@ -473,6 +477,10 @@ button:disabled {
         width: 170px;
     }
 
+    #footer {
+        width: 500px;
+    }
+
     .contact {
         left: 10px;
         height: 50px;
@@ -524,6 +532,10 @@ button:disabled {
 
     .logo .verticalflip {
         font-size: 100%;
+    }
+
+    #footer {
+        width: 350px;
     }
 
     .logo .verticalflip span {
