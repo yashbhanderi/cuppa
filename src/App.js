@@ -99,9 +99,9 @@ const App = () => {
                 onTimeUpdate={(e) => playbackHandler(e)}
                 className="video"
                 controls
-                autoplay
-                unmute
-                loop>
+                autoPlay={true}
+                loop muted
+                >
                 <source
                     src="https://firebasestorage.googleapis.com/v0/b/coffee-loyalty-8f106.appspot.com/o/VID-20220407-WA0001.mp4?alt=media&token=128fe0a7-8b9a-4052-8dd7-9ee27217416c"
                     type="video/mp4"
@@ -174,12 +174,12 @@ const App = () => {
                             />
                         </div>
 
-                        <i
+                        <button
                             id="sendBtn"
                             onClick={feedbackBtnHandler}
-                            className="fa-solid fa-caret-up">
-                            <span>Go</span>
-                        </i>
+                            >
+                            Go
+                        </button>
                     </>
                 )}
             </div>
