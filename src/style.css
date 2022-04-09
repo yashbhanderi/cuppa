@@ -382,14 +382,14 @@ button:disabled {
     position: absolute;
     bottom: 70px;
     left: 36%;
-    width: 700px;
+    width: 40vw;
 }
 
 .contactInput::placeholder {
     color: #fff;
 }
 
-@media only screen and (min-width: 901px) and (max-width: 1300px) {
+@media only screen and (min-width: 901px) and (max-width: 1400px) {
     .logoImg {
         height: 80px;
         width: 100px;
@@ -404,7 +404,8 @@ button:disabled {
     }
 
     #footer {
-        width: 600px;
+        width: 35vw;
+        left: 38%;
     }
 
     .logo .verticalflip span {
@@ -443,11 +444,22 @@ button:disabled {
     .react-tel-input .country-list .country .dial-code {
         font-size: 16px;
     }
-    .sendBtn {
-        font-size: 2rem;
-        height: 48px;
-        width: 120px;
-    }
+    #sendBtn {
+    position: relative;
+    font-size: 7rem;
+    /* height: 58px;
+    width: 120px; */
+    /* margin-left: 10px; */
+    /* color: rgb(255, 0, 0); */
+    /* margin-top: 15px; */
+    transform: rotate(90deg);
+}
+
+#sendBtn span {
+    font-size: 1.3rem;
+    top: 27px;
+    right: 14px;
+}
     .btn {
         width: auto;
         height: 50px;
@@ -467,6 +479,11 @@ button:disabled {
         font-size: 2rem;
     }
 
+    #footer {
+        left: 38%;
+        
+    }
+
     .logo .verticalflip {
         font-size: 130%;
     }
@@ -479,6 +496,7 @@ button:disabled {
 
     #footer {
         width: 500px;
+        bottom: 100px;
     }
 
     .contact {
@@ -536,6 +554,13 @@ button:disabled {
 
     #footer {
         width: 350px;
+        bottom: 150px;
+        left: 5%;
+    }
+
+    #scanMeButton {
+        margin-bottom: 0;
+        margin-top: 20px;
     }
 
     .logo .verticalflip span {
@@ -554,7 +579,7 @@ button:disabled {
         width: 340px;
     }
     .iconLink {
-        top: 30%;
+        top: 20%;
         right: 20px;
         height: 70vh;
         width: 160px;
