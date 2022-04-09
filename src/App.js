@@ -179,12 +179,12 @@ const App = () => {
                             />
                         </div>
 
-                        <i
+                        <button
                             id="sendBtn"
                             onClick={feedbackBtnHandler}
-                            className="fa-solid fa-caret-up">
-                            <span>Go</span>
-                        </i>
+                            >
+                            Go
+                        </button>
                     </>
                 )}
             </div>
