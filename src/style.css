@@ -281,13 +281,17 @@ body {
 /* .fa {  } */
 
 #sendBtn {
-    background: linear-gradient(281deg, rgba(255, 57, 91, 1) 0%, rgba(255, 0, 127, 1) 53%); /* Green */
+    background: linear-gradient(
+        281deg,
+        rgba(255, 57, 91, 1) 0%,
+        rgba(255, 0, 127, 1) 53%
+    ); /* Green */
     border: none;
     color: white;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    border-radius: 10px; 
+    border-radius: 10px;
     height: 50px;
     width: 100px;
     font-weight: 600;
@@ -298,13 +302,13 @@ body {
 
 /* #sendBtn span {
     /* transform: rotate(-90deg); */
-    /* font-weight: 600;
+/* font-weight: 600;
     font-size: 3rem;
     color: white;
     position: absolute;
     top: 40px;
     right: 23px; */
-/* } */ 
+/* } */
 
 #sendBtn:hover {
     cursor: pointer;
@@ -370,7 +374,7 @@ button:disabled {
     background-color: rgba(0, 0, 0, 0.596);
     border-radius: 30px;
     margin: auto;
-    letter-spacing: .8;
+    letter-spacing: 0.8;
 }
 
 .react-tel-input .flag {
@@ -392,23 +396,80 @@ button:disabled {
     color: #fff;
 }
 
-@media only screen and (min-width: 901px) and (max-width: 1400px) {
+@media only screen and (min-width: 800px) and (max-width: 1100px) {
+    .iconText {
+        font-size: 2.2rem;
+        padding: 8px;
+    }
+
+    .logoDiv {
+        margin-right: 150px;
+    }
+
+    #footer {
+        width: 32vw;
+        left: 45%;
+    }
+
+    .contact {
+        left: 30px;
+        height: 90px;
+        width: 410px;
+    }
+
+    .iconLink {
+        top: 15%;
+        right: 40px;
+        height: 55vh;
+        width: 190px;
+    }
+    .iconLink img {
+        height: 55px;
+        width: auto;
+    }
+    .iconLink .qrCode {
+        height: 190px;
+    }
+
+    .logoImg {
+        height: 120px;
+        width: 165px;
+    }
+
+    .logo .verticalflip {
+        font-size: 220%;
+        margin-right: 8px;
+    }
+
+    .logo .verticalflip span {
+        padding: 5px 7px;
+        border-radius: 8px;
+        width: auto;
+        margin-bottom: 10px;
+    }
+
+    #sendBtn {
+        font-size: 2.5rem;
+        height: 60px;
+        width: 110px;
+        margin-right: 10px;
+    }
+
+    /* .contact {
+        left: 50px;
+        height: 80px;
+        width: 350px;
+    } */
+}
+
+@media only screen and (min-width: 1101px) and (max-width: 1400px) {
     .logoImg {
         height: 150px;
         width: 175px;
     }
 
-    .thankyouText {
-        font-size: 2.3rem;
-    }
-
     .logo .verticalflip {
         font-size: 300%;
-    }
-
-    #footer {
-        width: 35vw;
-        left: 44%;
     }
 
     .logo .verticalflip span {
@@ -417,21 +478,19 @@ button:disabled {
         width: auto;
         margin-bottom: 15px;
     }
+    .thankyouText {
+        font-size: 2.3rem;
+    }
+
+    #footer {
+        width: 35vw;
+        left: 44%;
+    }
 
     .contact {
         left: 50px;
         height: 90px;
         width: 500px;
-    }
-    .iconLink {
-        top: 22%;
-        right: 65px;
-        height: 47vh;
-        width: 230px;
-    }
-    .iconLink img {
-        height: 65px;
-        width: auto;
     }
     .iconText {
         font-size: 2.9rem;
@@ -450,6 +509,16 @@ button:disabled {
     .btn {
         width: auto;
         height: 50px;
+    }
+    .iconLink {
+        top: 22%;
+        right: 65px;
+        height: 47vh;
+        width: 230px;
+    }
+    .iconLink img {
+        height: 65px;
+        width: auto;
     }
     .iconLink .qrCode {
         height: 220px;
@@ -474,7 +543,6 @@ button:disabled {
 
     #footer {
         left: 38%;
-        
     }
 
     .logo .verticalflip {
