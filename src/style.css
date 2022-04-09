@@ -7,6 +7,7 @@
     --text-color-2: #666;
     --bg-color-1: #fff;
     --bg-color-2: #eee;
+    
     /* --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1); */
 }
 
@@ -37,13 +38,13 @@ body {
     width: 100vw;
 }
 
-#home {
+.home {
     height: 100%;
     width: 100%;
     position: relative;
 }
 
-#video {
+.video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -51,7 +52,7 @@ body {
     position: relative;
 }
 
-#logo {
+.logo {
     width: 100%;
     margin: auto;
     position: absolute;
@@ -61,14 +62,14 @@ body {
     justify-content: center;
 }
 
-#logoDiv {
+.logoDiv {
     display: flex;
     justify-content: space-between;
     width: 250px;
     padding-right: 50px;
 }
 
-#logoImg {
+.logoImg {
     height: 100px;
     width: 120px;
     /* color: #270949; */
@@ -110,7 +111,7 @@ body {
     }
 }
 
-#logo .verticalflip {
+.logo .verticalflip {
     /* position: absolute;
     top: 55px;
     left: 490px; */
@@ -123,7 +124,7 @@ body {
     margin-right: 10px;
 }
 
-#logo .verticalflip span {
+.logo .verticalflip span {
     animation: vertical 7.5s linear infinite 0s;
     -ms-animation: vertical 7.5s linear infinite 0s;
     -webkit-animation: vertical 7.5s linear infinite 0s;
@@ -138,13 +139,13 @@ body {
     border-radius: 10px;
 }
 
-#logo .verticalflip span:nth-child(2) {
+.logo .verticalflip span:nth-child(2) {
     -ms-animation-delay: 2.5s;
     -webkit-animation-delay: 2.5s;
     animation-delay: 2.5s;
 }
 
-#logo .verticalflip span:nth-child(3) {
+.logo .verticalflip span:nth-child(3) {
     -ms-animation-delay: 5s;
     -webkit-animation-delay: 5s;
     animation-delay: 5s;
@@ -154,6 +155,10 @@ body {
     position: relative;
     /* margin-right: 120px; */
     width: 180px;
+}
+
+.react-tel-input .flag-dropdown.open .selected-flag {
+    background-color: black;
 }
 
 #slogan #sloganText {
@@ -204,10 +209,10 @@ body {
     color: #d24936;
 }
 
-#contact {
+.contact {
     position: absolute;
     /* top: 550px; */
-    bottom: 60px;
+    bottom: 70px;
     left: 30px;
     height: 80px;
     width: 500px;
@@ -222,7 +227,7 @@ body {
     /* border-color: rgb(255, 41, 128, 0.6); */
 }
 
-#inputBox {
+.inputBox {
     font-size: 1.5rem;
     height: 70px;
     width: 300px;
@@ -240,7 +245,7 @@ body {
     left: 13px;
 } */
 
-#notification {
+.notification {
     position: absolute;
     bottom: 60px;
     left: 2px;
@@ -255,7 +260,7 @@ body {
     color: green;
 }
 
-#msgIcon {
+.msgIcon {
     font-size: 1.6rem;
     /* color: #ff2980; */
     margin-top: 2px;
@@ -275,7 +280,7 @@ body {
     transition: all 1s;
 }
 
-#sendBtn {
+.sendBtn {
     font-size: 2.5rem;
     height: 58px;
     width: 120px;
@@ -287,8 +292,8 @@ body {
     margin-right: 10px;
 }
 
-#sendBtn:hover {
-    cursor: pointer;
+.sendBtn:hover {
+   cursor: pointer;
     background-color: #ec6a9c;
 }
 
@@ -297,93 +302,257 @@ button:disabled {
     cursor: not-allowed;
 }
 
-#iconLink {
+.iconLink {
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 200px;
+    /* top: 295px; */
     right: 60px;
     height: 350px;
     width: 220px;
+    bottom: 70px;
 }
 
-#iconLink img {
+.iconLink .qrCode {
+    height: 200px;
+}
+
+.iconLink img {
     margin: 6px;
     height: 60px;
     /* width: 200px; */
     width: auto;
 }
 
-#thankyouText {
+.thankyouText {
     color: #fff;
     font-size: 2.5rem;
-    margin-left: 10px;
+    margin-left: 25px;
 }
 
-#iconText {
-    font-size: 1.5rem;
+.iconText {
+    font-size: 3rem;
     /* font-family: "Poppins", sans-serif;
      */
     font-family: "Source Sans Pro", sans-serif;
-    background-color: #eee;
-    background: transparent;
-    color: #aa3366;
+    /* background: transparent; */
     padding: 10px;
+    color: rgb(255, 255, 255);
+    background: rgb(255, 41, 128, 0.6);
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px lightgray
 }
 
-@media screen and (max-width: 992px) {
-    #inputBox {
-        height: 70px;
+.react-tel-input .flag {
+        height: var(--PhoneInputCountryFlag-height);
+}
+
+/* #companyInfo {
+    
+} */
+
+#footer {
+    position: absolute;
+    bottom: 70px;
+    left: 36%;
+    width: 700px;
+}
+
+.contactInput::placeholder {
+    color: #fff;
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1300px) {
+    .logoImg {
+        height: 80px;
         width: 100px;
     }
 
-    #sendBtn {
-        font-size: 1.5rem;
-        height: 38px;
-        width: 50px;
-        /* margin-left: 10px; */
-        color: #fff;
-        background-color: #ff2980;
-        border-radius: 10px;
-        margin-right: 5px;
+    .thankyouText {
+        font-size: 2.3rem;
     }
 
-    #contact {
-        position: absolute;
-        /* top: 550px; */
-        bottom: 60px;
-        left: 30px;
-        height: 40px;
+    .logo .verticalflip {
+        font-size: 150%;
+    }
+
+    .logo .verticalflip span {
+        padding: 5px 7px;
+        border-radius: 8px;
         width: auto;
-        justify-content: space-between;
-        align-items: center;
     }
 
-    #inputBox {
-        height: 70px;
-        width: 300px;
+    .contact {
+        left: 10px;
+        height: 60px;
+        width: 380px;
+    }
+    .iconLink {
+        top: 25%;
+        right: 25px;
+        height: 70vh;
+        width: 170px;
+    }
+    .iconLink img {
+        height: 50px;
+        width: auto;
+        /* width: 200px; */
+    }
+    .iconText {
+        font-size: 1.6rem;
+        padding: 9px;
+    }
+    .react-tel-input .country-list {
+        width: 180px;
+        height: 180px;
+    }
+    .react-tel-input .country-list .country-name {
+        font-size: 16px;
+    }
+    .react-tel-input .country-list .country .dial-code {
+        font-size: 16px;
+    }
+    .sendBtn {
+        font-size: 2rem;
+        height: 48px;
+        width: 120px;
+    }
+    .btn {
+        width: auto;
+        height: 50px;
+    }
+    .iconLink .qrCode {
+        height: 158px;
+    }
+}
+
+
+
+@media only screen and (min-width: 451px) and (max-width: 900px) {
+    .logoImg {
+        height: 80px;
+        width: 100px;
     }
 
-    #iconLink {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        top: 115px;
-        right: 30px;
-        height: 200px;
-        width: 150px;
+    .thankyouText {
+        font-size: 2rem;
     }
 
-    #iconLink img {
-        margin: 6px;
+    .logo .verticalflip {
+        font-size: 130%;
+    }
+
+    .logo .verticalflip span {
+        padding: 8px 10px;
+        border-radius: 9px;
+        width: 170px;
+    }
+
+    .contact {
+        left: 10px;
+        height: 50px;
+        width: 380px;
+    }
+    .iconLink {
+        top: 24%;
+        right: 25px;
+        height: 40vh;
+        width: 170px;
+    }
+    /* .iconLink img {
+        height: 50px;
+        width: auto;
+        /* width: 200px; */
+    .iconText {
+        font-size: 1.4rem;
+        padding: 8px;
+    }
+    /* .react-tel-input .country-list {
+        width: 180px;
+        height: 180px;
+    }
+    .react-tel-input .country-list .country-name {
+        font-size: 16px;
+    }
+    .react-tel-input .country-list .country .dial-code {
+        font-size: 16px;
+    } */
+    .iconLink img {
         height: 60px;
         width: auto;
+        /* width: 200px; */
+    }
+    .sendBtn {
+        height: 42px;
+        width: 140px;
+        padding: 5px;
     }
 }
 
 /* On screens that are 600px or less, set the background color to olive */
-@media screen and (max-width: 600px) {
-    body {
-        background-color: olive;
+
+@media only screen and (max-width: 450px)  {
+    .logoImg {
+        height: 70px;
+        width: 90px;
+    }
+
+    .logo .verticalflip {
+        font-size: 100%;
+    }
+
+    .logo .verticalflip span {
+        padding: 5px 7px;
+        border-radius: 8px;
+        width: auto;
+    }
+
+    .thankyouText {
+        font-size: 1.8rem;
+    }
+
+    .contact {
+        left: 10px;
+        height: 50px;
+        width: 340px;
+    }
+    .iconLink {
+        top: 30%;
+        right: 20px;
+        height: 70vh;
+        width: 160px;
+        bottom: 50px;
+    }
+    .iconLink img {
+        height: 40px;
+        width: auto;
+        /* width: 200px; */
+    }
+    .iconText {
+        font-size: 1.1rem;
+        padding: 7px;
+    }
+    .react-tel-input .country-list {
+        width: 180px;
+        height: 180px;
+    }
+    .react-tel-input .country-list .country-name {
+        font-size: 16px;
+    }
+    .react-tel-input .country-list .country .dial-code {
+        font-size: 16px;
+    }
+    .sendBtn {
+        height: 40px;
+        width: 120px;
+        padding: 3px;
+        font-size: 16px;
+    }
+    .btn {
+        width: auto;
+        height: 50px;
+    }
+    .iconLink .qrCode {
+        height: 148px;
     }
 }
