@@ -16,6 +16,9 @@ import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 // real-times
 // import { ref, set } from "firebase/database";
+// icon
+// ./static/media/1 TRANSPARENT.be6b353ead837a4852ad.png
+
 
 const App = () => {
     const slogan = ["Dublin is", "Engage Customers Like Never Before with", "Boost revenue with"];
@@ -30,7 +33,7 @@ const App = () => {
             const datetime = Date().toLocaleString();
 
             try {
-                addDoc(collection(db, 'feedback'), {
+                addDoc(collection(db, 'contacts'), {
                     mobile_number: "+"+feedback,
                     created: datetime,
                 });
@@ -67,6 +70,16 @@ const App = () => {
         } else {
             setLogoblack(false);
         }
+       
+        // console.log(document.getElementsByClassName("video")[0].getAttribute("muted"));
+    };
+
+    const onGooglePlayClickHandler = () => {
+        window.location.href = "https://play.google.com/store/apps/details?id=lakshayrao.com.github.cuppa";
+    };
+
+    const onAppStorePlayClickHandler = () => {
+        window.location.href = "https://play.google.com/store/apps/details?id=lakshayrao.com.github.cuppa";
     };
 
     useEffect(() => {
@@ -91,7 +104,7 @@ const App = () => {
                 onTimeUpdate={(e) => playbackHandler(e)}
                 className="video"
                 controls
-                autoplay
+                autoPlay={true}
                 unmute
                 loop>
                 <source
@@ -178,8 +191,8 @@ const App = () => {
             <div className="iconLink">
                 <button id="scanMeButton">Scan Me</button>
                 <img src={QRCode} alt="" className="qrCode" />
-                <img src={GooglePlay} alt="" className="btn" />
-                <img src={AppStore} alt="" className="btn" />
+                <img src={GooglePlay} alt="" className="btn" onClick={onGooglePlayClickHandler} />
+                <img src={AppStore} alt="" className="btn" onClick={onAppStorePlayClickHandler}/>
             </div>
             <div id="footer">
                 <h3 className="iconText">
