@@ -381,13 +381,14 @@ button:disabled {
 #footer {
     position: absolute;
     bottom: 70px;
-    left: 36%;
+    left: 38%;
     width: 40vw;
 }
 
 .contactInput::placeholder {
     color: #fff;
 }
+
 
 @media only screen and (min-width: 901px) and (max-width: 1400px) {
     .logoImg {
@@ -420,10 +421,11 @@ button:disabled {
         width: 380px;
     }
     .iconLink {
-        top: 25%;
+        /* top: 25%; */
         right: 25px;
-        height: 70vh;
+        /* height: 70vh; */
         width: 170px;
+        bottom: 70px;
     }
     .iconLink img {
         height: 50px;
@@ -453,13 +455,13 @@ button:disabled {
     /* color: rgb(255, 0, 0); */
     /* margin-top: 15px; */
     transform: rotate(90deg);
-}
+    }
 
-#sendBtn span {
-    font-size: 1.3rem;
-    top: 27px;
-    right: 14px;
-}
+    #sendBtn span {
+        font-size: 1.3rem;
+        top: 27px;
+        right: 14px;
+    }
     .btn {
         width: auto;
         height: 50px;
@@ -467,6 +469,19 @@ button:disabled {
     .iconLink .qrCode {
         height: 158px;
     }
+    #scanMeButton {
+        margin-bottom: 0;
+        font-size: 1.2rem;
+        /* margin-top: 20px; */
+    }
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1050px) {
+    #footer {
+        width: 35vw;
+        left: 43%;
+    }
+   
 }
 
 @media only screen and (min-width: 451px) and (max-width: 900px) {
@@ -537,6 +552,15 @@ button:disabled {
         height: 42px;
         width: 140px;
         padding: 5px;
+    }
+    
+    #scanMeButton {
+        margin-bottom: 0;
+        font-size: 1.2rem;
+        width: 100px;
+        padding: 3px;
+        height: 30px;
+        /* margin-top: 20px; */
     }
 }
 
