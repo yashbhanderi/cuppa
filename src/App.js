@@ -8,22 +8,20 @@ import QRCode from "./images/qrchimpX512.png";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-import startFirebase from "./firebase";
+// import startFirebase from "./firebase";
 
 // firestore
-// import { db } from "./firebase";
-// import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { db } from "./firebase";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 // real-times
-import { ref, set } from "firebase/database";
+// import { ref, set } from "firebase/database";
 
 const App = () => {
     const slogan = ["Dublin is", "Engage Customers Like Never Before with", "Boost revenue with"];
     const [feedback, setFeedback] = useState("");
-    const [email, setEmail] = useState("");
     const [toggle, setToggle] = useState(false);
-    const [db, setDb] = useState(null);
-    const [disable, setDisable] = useState(false);
+    // const [db, setDb] = useState(null);
     const [showNotification, setShowNotification] = useState(false);
     const [logoblack, setLogoblack] = useState(false);
 
@@ -31,23 +29,31 @@ const App = () => {
         if (feedback !== "") {
             const datetime = Date().toLocaleString();
 
-            set(ref(db, "feedback/" + datetime), {
-                number: "+" + feedback,
-                created: new Date().toLocaleString(),
-            })
-                .then(() => {
-                    console.log("data added successfully.");
-                    setFeedback("");
-                    setDisable(true);
-                    setToggle(true);
-                })
-                .catch((err) => {
-                    console.log("[Error] ", err);
+            try {
+                addDoc(collection(db, 'feedback'), {
+                    mobile_number: "+"+feedback,
+                    created: datetime,
                 });
+                setFeedback("");
+                setToggle(true);
+            } catch (err) {
+                console.log(err);
+            }
+
+            // set(ref(db, "feedback/" + datetime), {
+            //     number: "+" + feedback,
+            //     created: new Date().toLocaleString(),
+            // })
+            //     .then(() => {
+            //         console.log("data added successfully.");
+            //         setFeedback("");
+            //         setToggle(true);
+            //     })
+            //     .catch((err) => {
+            //         console.log("[Error] ", err);
+            //     });
         }
     };
-
-    console.log(feedback);
 
     const closeMessage = (e) => {
         const elem = document.getElementById("notification");
@@ -70,9 +76,14 @@ const App = () => {
             }, 3000);
     }, [showNotification]);
 
+    // useEffect(() => {
+    //     setDb(startFirebase());
+    // }, []);
+
     useEffect(() => {
-        setDb(startFirebase());
-    }, []);
+        const flag = document.getElementsByClassName("flag")[0];
+        flag && flag.classList.add("ie");
+    });
 
     return (
         <div className="home">
@@ -88,15 +99,6 @@ const App = () => {
                     type="video/mp4"
                 />
             </video>
-            {/* <iframe
-                className="video"
-                src="https://www.youtube.com/embed/YBHQbu5rbdQ"
-                title="YouTube video player"
-                frameborder="0"
-                showinfo="0"
-                controls="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe> */}
 
             <div className="logo">
                 <div className="logoDiv">
@@ -127,10 +129,8 @@ const App = () => {
                                 alignItems: "center",
                                 textAlign: "center",
                             }}>
-                            {/* <i className="msgIcon" className="fa-regular fa-message"></i> */}
                             <PhoneInput
-                                // enableAreaCodeStretch={true}
-                                disableCountryCode
+                                disableInitialCountryGuess
                                 inputStyle={{
                                     color: "white",
                                     textAlign: "left",
@@ -145,47 +145,41 @@ const App = () => {
                                     color: "black",
                                     textAlign: "left",
                                     bottom: "70px",
+                                    border: "none",
                                 }}
                                 // dropdown button
                                 buttonStyle={{
-                                    fontSize: "2.2rem",
+                                    // fontSize: "2.2rem",
                                     width: "40px",
-                                    color: "#fff",
                                     height: "50px",
                                     top: "5px",
-                                    // borderRadius: "5px",
+                                    borderRadius: "5px",
                                     textAlign: "center",
                                     border: "none",
                                     background: "none",
                                     marginRight: "5px",
                                 }}
-                                // disabled={ disable ? "true" : "false" }
-                                country={"ie"}
-                                className="contactInput"
+                                country="ie"
                                 placeholder="Drop your number here :) "
                                 value={feedback}
                                 onChange={setFeedback}
                             />
                         </div>
-                        <button
-                            disabled={disable ? true : false}
-                            className="sendBtn"
-                            onClick={feedbackBtnHandler}>
-                            Go
-                        </button>
+
+                        <i
+                            id="sendBtn"
+                            onClick={feedbackBtnHandler}
+                            className="fa-solid fa-caret-up">
+                            <span>Go</span>
+                        </i>
                     </>
                 )}
             </div>
             <div className="iconLink">
+                <button id="scanMeButton">Scan Me</button>
                 <img src={QRCode} alt="" className="qrCode" />
                 <img src={GooglePlay} alt="" className="btn" />
                 <img src={AppStore} alt="" className="btn" />
-                {/* <div id="companyInfo"> */}
-                {/* <h3 className="iconText">
-                        Cuppa's coffee loyalty program is free for everyone 5-minute setup, No setup
-                        cost, No setup fees
-                    </h3> */}
-                {/* </div> */}
             </div>
             <div id="footer">
                 <h3 className="iconText">

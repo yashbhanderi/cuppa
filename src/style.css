@@ -7,7 +7,7 @@
     --text-color-2: #666;
     --bg-color-1: #fff;
     --bg-color-2: #eee;
-    
+
     /* --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1); */
 }
 
@@ -120,7 +120,7 @@ body {
     display: flex;
     justify-content: right;
     align-items: flex-end;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-right: 10px;
 }
 
@@ -131,9 +131,7 @@ body {
     color: rgb(255, 255, 255);
     position: absolute;
     opacity: 0;
-    background: rgb(255, 41, 128, 0.6);
-    border-bottom: 2px solid white;
-
+    background: rgb(255, 41, 128, 0.8);
     padding: 3px 10px;
     margin-bottom: 2px;
     border-radius: 10px;
@@ -214,7 +212,7 @@ body {
     /* top: 550px; */
     bottom: 70px;
     left: 30px;
-    height: 80px;
+    height: 90px;
     width: 500px;
     background-color: rgba(0, 0, 0, 0.596);
     display: flex;
@@ -280,26 +278,44 @@ body {
     transition: all 1s;
 }
 
-.sendBtn {
-    font-size: 2.5rem;
-    height: 58px;
-    width: 120px;
+/* .fa {  } */
+
+#sendBtn {
+    position: relative;
+    font-size: 11rem;
+    /* height: 58px;
+    width: 120px; */
     /* margin-left: 10px; */
-    color: #fff;
-    background: rgb(255, 57, 91);
-    background: linear-gradient(281deg, rgba(255, 57, 91, 1) 0%, rgba(255, 0, 127, 1) 53%);
+    /* color: rgb(255, 0, 0); */
+    color: rgb(255, 57, 91);
+    color: linear-gradient(281deg, rgba(255, 57, 91, 1) 0%, rgba(255, 0, 127, 1) 53%);
     border-radius: 10px;
     margin-right: 10px;
+    /* margin-top: 15px; */
+    transform: rotate(90deg);
 }
 
-.sendBtn:hover {
-   cursor: pointer;
-    background-color: #ec6a9c;
+#sendBtn span {
+    transform: rotate(-90deg);
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    top: 40px;
+    right: 23px;
+}
+
+#sendBtn:hover {
+    cursor: pointer;
+    /* background-color: #ec6a9c; */
 }
 
 input:disabled,
 button:disabled {
     cursor: not-allowed;
+}
+
+.react-tel-input .form-control::placeholder {
+    color: #fff;
 }
 
 .iconLink {
@@ -308,7 +324,7 @@ button:disabled {
     flex-direction: column;
     /* top: 295px; */
     right: 60px;
-    height: 350px;
+    height: 400px;
     width: 220px;
     bottom: 70px;
 }
@@ -332,19 +348,30 @@ button:disabled {
 
 .iconText {
     font-size: 3rem;
+    font-weight: lighter;
     /* font-family: "Poppins", sans-serif;
      */
     font-family: "Source Sans Pro", sans-serif;
     /* background: transparent; */
     padding: 10px;
     color: rgb(255, 255, 255);
-    background: rgb(255, 41, 128, 0.6);
+    background: rgb(255, 41, 128, 0.8);
     border-radius: 5px;
-    box-shadow: 1px 1px 2px lightgray
+}
+
+#scanMeButton {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 30px;
+    width: 130px;
+    background-color: rgba(0, 0, 0, 0.596);
+    border-radius: 30px;
+    margin: auto;
 }
 
 .react-tel-input .flag {
-        height: var(--PhoneInputCountryFlag-height);
+    height: var(--PhoneInputCountryFlag-height);
 }
 
 /* #companyInfo {
@@ -426,8 +453,6 @@ button:disabled {
     }
 }
 
-
-
 @media only screen and (min-width: 451px) and (max-width: 900px) {
     .logoImg {
         height: 80px;
@@ -491,7 +516,7 @@ button:disabled {
 
 /* On screens that are 600px or less, set the background color to olive */
 
-@media only screen and (max-width: 450px)  {
+@media only screen and (max-width: 450px) {
     .logoImg {
         height: 70px;
         width: 90px;
