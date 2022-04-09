@@ -96,6 +96,7 @@ const App = () => {
     useEffect(() => {
         const flag = document.getElementsByClassName("flag")[0];
         flag && flag.classList.add("ie");
+        console.log(`width: ${window.screen.width} hingt: ${window.screen.height}`);
     });
 
     return (
@@ -105,7 +106,7 @@ const App = () => {
                 className="video"
                 controls
                 autoPlay={true}
-                unmute
+                muted
                 loop>
                 <source
                     src="https://firebasestorage.googleapis.com/v0/b/coffee-loyalty-8f106.appspot.com/o/VID-20220407-WA0001.mp4?alt=media&token=128fe0a7-8b9a-4052-8dd7-9ee27217416c"

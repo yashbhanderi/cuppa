@@ -396,72 +396,6 @@ button:disabled {
     color: #fff;
 }
 
-@media only screen and (min-width: 800px) and (max-width: 1100px) {
-    .iconText {
-        font-size: 2.2rem;
-        padding: 8px;
-    }
-
-    .logoDiv {
-        margin-right: 150px;
-    }
-
-    #footer {
-        width: 32vw;
-        left: 45%;
-    }
-
-    .contact {
-        left: 30px;
-        height: 90px;
-        width: 410px;
-    }
-
-    .iconLink {
-        top: 15%;
-        right: 40px;
-        height: 55vh;
-        width: 190px;
-    }
-    .iconLink img {
-        height: 55px;
-        width: auto;
-    }
-    .iconLink .qrCode {
-        height: 190px;
-    }
-
-    .logoImg {
-        height: 120px;
-        width: 165px;
-    }
-
-    .logo .verticalflip {
-        font-size: 220%;
-        margin-right: 8px;
-    }
-
-    .logo .verticalflip span {
-        padding: 5px 7px;
-        border-radius: 8px;
-        width: auto;
-        margin-bottom: 10px;
-    }
-
-    #sendBtn {
-        font-size: 2.5rem;
-        height: 60px;
-        width: 110px;
-        margin-right: 10px;
-    }
-
-    /* .contact {
-        left: 50px;
-        height: 80px;
-        width: 350px;
-    } */
-}
-
 @media only screen and (min-width: 1101px) and (max-width: 1400px) {
     .logoImg {
         height: 150px;
@@ -531,7 +465,79 @@ button:disabled {
     }
 }
 
-@media only screen and (min-width: 451px) and (max-width: 900px) {
+@media only screen and (min-width: 800px) and (max-width: 1100px) {
+    .iconText {
+        font-size: 2.2rem;
+        padding: 8px;
+    }
+
+    .logoDiv {
+        margin-right: 150px;
+    }
+
+    #footer {
+        width: 32vw;
+        left: 45%;
+    }
+
+    .contact {
+        left: 30px;
+        height: 90px;
+        width: 410px;
+    }
+
+    .iconLink {
+        top: 15%;
+        right: 40px;
+        height: 55vh;
+        width: 190px;
+    }
+    .iconLink img {
+        height: 55px;
+        width: auto;
+    }
+    .iconLink .qrCode {
+        height: 190px;
+    }
+
+    .logoImg {
+        height: 120px;
+        width: 165px;
+    }
+
+    .logo .verticalflip {
+        font-size: 220%;
+        margin-right: 8px;
+    }
+
+    .logo .verticalflip span {
+        padding: 5px 7px;
+        border-radius: 8px;
+        width: auto;
+        margin-bottom: 10px;
+    }
+
+    #sendBtn {
+        font-size: 2.5rem;
+        height: 60px;
+        width: 110px;
+        margin-right: 10px;
+    }
+
+    /* .contact {
+        left: 50px;
+        height: 80px;
+        width: 350px;
+    } */
+}
+
+/* @media only screen and (min-width: 1000px) and (max-width: 1050px) {
+    #footer {
+        left: 0%;
+    }
+} */
+
+@media only screen and (min-width: 451px) and (max-width: 799px) {
     .logoImg {
         height: 80px;
         width: 100px;
@@ -669,7 +675,7 @@ button:disabled {
     }
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1401px) {
     .logoImg {
         height: 200px;
         width: 250px;
@@ -680,12 +686,12 @@ button:disabled {
     }
 
     .logo .verticalflip {
-        font-size: 360%;
+        font-size: 320%;
     }
 
     #footer {
         width: 35vw;
-        left: 40%;
+        left: 43%;
     }
 
     .logo .verticalflip span {
@@ -702,8 +708,8 @@ button:disabled {
     }
     .iconLink {
         top: 22%;
-        right: 65px;
-        height: 50vh;
+        right: 50px;
+        height: 60vh;
         width: 260px;
     }
     .iconLink img {
